@@ -60,6 +60,7 @@ axios.interceptors.response.use(success => {
     return;
 });
 
+// 前置路径，方便后期扩展
 let base = '';
 
 // 传送json格式的post请求

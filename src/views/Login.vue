@@ -66,10 +66,10 @@
                         this.postRequest('/login', this.loginForm).then(resp => {
                             this.loading = false;
                             if (resp) {
-                                //存储用户token
+                                // 存储用户token
                                 const tokenStr = resp.obj.tokenHead + resp.obj.token;
                                 window.sessionStorage.setItem('tokenStr', tokenStr);
-                                //页面跳转
+                                // 页面跳转
                                 let path = this.$route.query.redirect;
                                 this.$router.replace((path == '/' || path == undefined) ? '/home' :
                                     path);
