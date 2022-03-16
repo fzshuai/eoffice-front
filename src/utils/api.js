@@ -15,10 +15,9 @@ axios.interceptors.request.use(config => {
     console.log(error);
 })
 
-
-// 响应拦截器
+// 响应拦截器，success指的是调用后端接口成功
 axios.interceptors.response.use(success => {
-    //业务逻辑错误
+    // 业务逻辑错误
     if (success.status && success.status == 200) {
         if (success.data.code == 500 || success.data.code == 401 || success.data.code == 403) {
             Message.error({
@@ -89,7 +88,6 @@ export const getRequest = (url, params) => {
         data: params
     })
 }
-
 
 // 传送json的delete请求
 export const deleteRequest = (url, params) => {
